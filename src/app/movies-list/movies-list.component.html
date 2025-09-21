@@ -1,0 +1,13 @@
+<div style="display: flex; align-items: center; flex-direction: column;">
+    <ul>
+      <li *ngFor="let m of movies">
+        <div class="movie-info">
+          <strong>{{ m.title }}</strong><br>
+            Release date: {{ m.release_date }}  &nbsp;
+            Budget: {{ m.budget }} million  &nbsp;
+            Duration: {{ reformatDuration(m.duration) }}  &nbsp;
+           <button (click)="showDetails(m.id)">Details</button>
+        </div>
+      </li>
+    </ul>
+  </div>
