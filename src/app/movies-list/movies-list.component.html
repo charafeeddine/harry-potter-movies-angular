@@ -1,6 +1,19 @@
+<div style="display: flex; justify-content: center;">
+  <strong style="color: red;">Filters</strong>
+  <label>
+    Title
+    <input [formControl]="titleFilters" />
+  </label>
+  
+  <label>
+    Release year
+    <input [formControl]="releaseYearFilters"  inputmode="numeric" />
+  </label>
+</div>
+
 <div style="display: flex; align-items: center; flex-direction: column;">
     <ul>
-      <li *ngFor="let m of movies">
+      <li *ngFor="let m of moviesFiltered()">
         <div class="movie-info">
           <strong>{{ m.title }}</strong><br>
             Release date: {{ m.release_date }}  &nbsp;
