@@ -4,23 +4,21 @@
     Title
     <input [formControl]="titleFilters" />
   </label>
-  
+
   <label>
     Release year
-    <input [formControl]="releaseYearFilters"  inputmode="numeric" />
+    <input [formControl]="releaseYearFilters" />
   </label>
 </div>
 
 <div style="display: flex; align-items: center; flex-direction: column;">
-    <ul>
-      <li *ngFor="let m of moviesFiltered()">
-        <div class="movie-info">
-          <strong>{{ m.title }}</strong><br>
-            Release date: {{ m.release_date }}  &nbsp;
-            Budget: {{ m.budget }} million  &nbsp;
-            Duration: {{ reformatDuration(m.duration) }}  &nbsp;
-           <button (click)="showDetails(m.id)">Details</button>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li *ngFor="let m of moviesFiltered()">
+      <strong>{{ m.title }}</strong><br>
+      Release date: {{ m.release_date }} &nbsp;
+      Budget: ${{ m.budget }} million &nbsp;
+      Duration: {{ formatDuration(m.duration) }} &nbsp;
+      <button [routerLink]="['/movies', m.id]">Details</button>
+    </li>
+  </ul>
+</div>

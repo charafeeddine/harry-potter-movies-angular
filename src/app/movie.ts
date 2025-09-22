@@ -4,4 +4,9 @@ export interface Movie {
     duration: number;
     budget: number;
     release_date: string;
+    box_office: string | number;
+    cinematographers: string[];
+    poster: string;
+    producers: string[];
+    summary: string; 
 }
